@@ -1,0 +1,66 @@
+# 🔁 Day 3: DevOps Workflow
+
+## 💡 DevOps Loop
+∞ Plan → Code → Build → Test → Deploy → Monitor → Feedback
+
+---
+
+## ⚙️ Workflow Breakdown
+
+### 1. Plan
+Define goals, create tasks, and manage requirements using tools like Jira
+
+### 2. Code
+Develop using Git for version control
+
+### 3. Build
+Compile & package application (Maven)
+
+### 4. Test
+Run automated tests (Selenium)
+
+### 5. Deploy
+Release to production using CI/CD tools (Jenkins)
+
+### 6. Monitor
+Track performance and logs
+
+### 7. Feedback
+Continuously improve based on monitoring insights
+
+---
+
+## 🔥 Tools Mapping
+| Stage | Tool |
+|------|------|
+| Plan | Jira |
+| Code | Git |
+| Build | Maven |
+| Test | Selenium |
+| Deploy | Jenkins |
+| Container | Docker |
+
+---
+
+## 🧠 Hands-on Learning (Today)
+✔ Explored Jira for project workflow management  
+✔ Understood how tasks, backlogs, and sprints are managed  
+✔ Learned how DevOps workflow starts from proper planning  
+
+---
+
+## 🧠 What I Learned Today
+✔ DevOps is a continuous loop  
+✔ Each stage is interconnected and automated  
+✔ Monitoring and feedback improve system reliability  
+✔ Planning tools like Jira play a critical role in workflow  
+
+---
+
+## 📌 My Takeaway
+DevOps is not just about tools like Docker or Jenkins — it starts from **proper planning and task management**.
+
+---
+
+## ✍️ Reflection
+"Today I realized that effective DevOps begins with structured planning using tools like Jira and ends with continuous improvement."
