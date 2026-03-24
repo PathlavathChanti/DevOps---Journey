@@ -1,0 +1,39 @@
+# 🔄 Day 2: SDLC with DevOps
+
+## 💡 What is SDLC?
+Software Development Life Cycle = Process to build software.
+
+---
+
+## 🔁 DevOps Lifecycle
+
+Plan → Code → Build → Test → Deploy → Monitor
+
+---
+
+## ⚡ DevOps Advantage
+- Continuous Integration
+- Continuous Deployment
+- Faster feedback loop
+
+---
+
+## 🔥 Example Flow
+Developer → Git → Build → Test → Deploy
+
+---
+
+## 🧠 What I Learned Today
+✔ SDLC becomes continuous in DevOps  
+✔ Automation reduces errors  
+✔ Feedback loop is important  
+
+---
+
+## 📌 My Takeaway
+DevOps transforms traditional development into a continuous cycle.
+
+---
+
+## ✍️ Reflection
+"Automation makes software delivery faster and more reliable."
