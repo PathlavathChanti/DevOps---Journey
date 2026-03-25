@@ -1,0 +1,44 @@
+# 🚀 Day 04 – Virtual Machines (Part 2) & AWS EC2 Setup
+
+## 📌 Overview
+In Day 04, I learned how Virtual Machines are used in real-world cloud environments and how to create and access them using AWS EC2.
+
+---
+
+## 🖥️ What is EC2?
+- EC2 (Elastic Compute Cloud) is a **virtual machine in AWS**
+- It allows users to:
+  - Launch servers
+  - Choose OS (Linux/Windows)
+  - Access remotely from anywhere
+
+---
+
+## ⚙️ Steps to Launch EC2 Instance
+
+1. Login to AWS Console  
+2. Navigate to **EC2 Dashboard**  
+3. Click on **Launch Instance**  
+4. Configure:
+   - OS: Amazon Linux / Ubuntu  
+   - Instance Type: t2.micro (Free Tier)  
+5. Create/Download **Key Pair (.pem)**  
+6. Configure Security Group:
+   - Allow SSH (Port 22)  
+7. Launch Instance 🚀  
+
+---
+
+## 🔑 Key Pair (Authentication)
+- Used for secure login to EC2  
+- Contains:
+  - Public Key → Stored in AWS  
+  - Private Key (.pem) → Stored locally  
+
+---
+
+## 🔐 Connecting to EC2
+
+### Using Git Bash / Terminal:
+```bash
+ssh -i test.pem ec2-user@your-public-ip
