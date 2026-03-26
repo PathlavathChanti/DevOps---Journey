@@ -1,0 +1,134 @@
+# 🐧 Day 6: Linux & Shell Scripting – DevOps Journey 🚀
+
+## 📌 Overview
+On Day 6 of my DevOps journey, I explored the fundamentals of **Linux Operating System** and **Shell Scripting**, which are essential for managing servers and automating tasks in real-world DevOps environments.
+
+---
+
+## 🎯 Key Learnings
+
+- Understanding Linux file system structure  
+- Basic and advanced Linux commands  
+- File and directory management  
+- Permissions and user control  
+- Process management  
+- Writing Shell Scripts for automation  
+
+---
+
+## 🐧 Linux Basics
+
+### 📁 File System Structure
+
+/
+├── home
+├── etc
+├── var
+├── bin
+
+
+---
+
+## 📂 File & Directory Commands
+
+```bash
+pwd          # Show current directory
+ls           # List files
+ls -l        # Detailed list
+ls -a        # Show hidden files
+
+mkdir folder # Create directory
+cd folder    # Change directory
+cd ..        # Move back
+
+touch file.txt   # Create file
+rm file.txt      # Delete file
+rm -r folder     # Delete directory
+📝 File Handling
+cat file.txt     # View file content
+nano file.txt    # Edit file
+less file.txt    # View large file
+🔐 Permissions
+ls -l              # Check permissions
+chmod 777 file.txt # Full permissions
+chmod 600 key.pem  # Secure file
+
+Permission Types:
+
+r → Read
+w → Write
+x → Execute
+👤 User Commands
+whoami     # Current user
+sudo su    # Switch to root user
+⚙️ Package Management (Ubuntu)
+sudo apt update
+sudo apt install nginx
+🔄 Process Management
+ps -ef          # List processes
+kill -9 <pid>   # Kill process
+📜 Shell Scripting
+📌 What is Shell Script?
+
+A shell script is a file containing multiple Linux commands used to automate tasks.
+
+✍️ Create Your First Script
+touch script.sh
+nano script.sh
+Add Script:
+#!/bin/bash
+
+echo "Hello DevOps"
+Run Script:
+chmod +x script.sh
+./script.sh
+🔁 Variables
+name="Chanti"
+echo $name
+🔀 Conditional Statements
+#!/bin/bash
+
+num=10
+
+if [ $num -gt 5 ]
+then
+  echo "Greater"
+else
+  echo "Smaller"
+fi
+🔁 Loops
+for i in 1 2 3 4
+do
+  echo $i
+done
+🧪 Real-Time DevOps Script
+#!/bin/bash
+
+echo "Updating system..."
+sudo apt update
+
+echo "Installing nginx..."
+sudo apt install nginx -y
+
+echo "Setup Complete!"
+🚀 Real-World Use Cases
+Automating server setup
+Installing packages
+Deployment scripts
+Monitoring systems
+Backup automation
+🧠 Key Takeaways
+
+✔ Linux is the backbone of cloud & DevOps
+✔ Commands help manage servers efficiently
+✔ Shell scripting enables automation
+✔ Essential for AWS EC2 & production environments
+
+🔗 Reference
+
+DevOps Playlist:
+https://www.youtube.com/playlist?list=PLdpzxOOAlwvIc1TjTwopNSjRJkzES2ZXk
+
+🙌 Conclusion
+
+Day 6 helped me understand how to interact with Linux systems and automate tasks using shell scripting — a crucial skill for every DevOps Engineer.
