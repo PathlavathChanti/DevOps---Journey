@@ -1,0 +1,251 @@
+# ⚡ Day 05 –  (AWS CLI, EC2 & Boto3)
+
+## ☁️ 1. EC2 Setup Flow (Manual Approach)
+
+### 🔹 Step 1: Need a Server
+
+* Use **Amazon EC2** to create virtual machines in the cloud.
+
+---
+
+### 🔹 Step 2: Create Key Pair
+
+* Create a `.pem` file during instance launch
+* Used for secure SSH authentication
+
+---
+
+### 🔹 Step 3: Launch EC2 (AWS Console)
+
+* Choose AMI (Ubuntu / Amazon Linux)
+* Select instance type (t2.micro – free tier)
+* Attach key pair
+* Configure security group (Allow SSH – Port 22)
+
+---
+
+### 🔹 Step 4: Connect to EC2
+
+#### ✅ Using SSH (Terminal)
+
+```bash
+ssh -i key.pem ubuntu@<public-ip>
+```
+
+#### 🔐 Fix Permission Error
+
+```bash
+chmod 600 key.pem
+```
+
+---
+
+### 🔹 Step 5: Basic EC2 Commands (Inside Instance)
+
+```bash
+sudo apt update
+sudo apt upgrade -y
+pwd
+ls
+whoami
+```
+
+---
+
+## 🚀 2. Scaling Infrastructure (AWS CLI)
+
+### ❗ Problem:
+
+Manual EC2 creation is not scalable for multiple instances.
+
+---
+
+### ✅ Solution: AWS CLI
+
+#### 🔹 Configure AWS CLI
+
+```bash
+aws --version
+aws configure
+```
+
+---
+
+#### 🔹 Launch EC2 Instance
+
+```bash
+aws ec2 run-instances \
+--image-id ami-xxxx \
+--count 2 \
+--instance-type t2.micro \
+--key-name my-key \
+--security-groups default
+```
+
+---
+
+#### 🔹 Manage EC2 Instances
+
+```bash
+aws ec2 describe-instances
+aws ec2 start-instances --instance-ids <id>
+aws ec2 stop-instances --instance-ids <id>
+aws ec2 reboot-instances --instance-ids <id>
+aws ec2 terminate-instances --instance-ids <id>
+```
+
+---
+
+## 📦 3. S3 Storage Commands
+
+```bash
+aws s3 ls
+aws s3 mb s3://bucket-name
+aws s3 cp file.txt s3://bucket-name/
+aws s3 cp s3://bucket-name/file.txt .
+aws s3 sync . s3://bucket-name
+```
+
+---
+
+## ⚙️ 4. Automation (DevOps Approach)
+
+### ❗ Problem:
+
+Even CLI becomes repetitive for large-scale operations.
+
+---
+
+### ✅ Solution: Automation using Code
+
+---
+
+## 🐍 5. Boto3 (Python Automation)
+
+### 🔹 Install Boto3
+
+```bash
+pip install boto3
+```
+
+---
+
+### 🔹 Configure Credentials
+
+```bash
+aws configure
+```
+
+---
+
+### 🔹 EC2 Automation Script
+
+```python
+import boto3
+
+ec2 = boto3.client('ec2')
+
+# List instances
+response = ec2.describe_instances()
+for reservation in response['Reservations']:
+    for instance in reservation['Instances']:
+        print(instance['InstanceId'])
+
+# Start instance
+ec2.start_instances(InstanceIds=['i-xxxxxxxx'])
+
+# Stop instance
+ec2.stop_instances(InstanceIds=['i-xxxxxxxx'])
+```
+
+---
+
+### 🔹 S3 Automation Script
+
+```python
+import boto3
+
+s3 = boto3.client('s3')
+
+# Upload file
+s3.upload_file('file.txt', 'bucket-name', 'file.txt')
+
+# Download file
+s3.download_file('bucket-name', 'file.txt', 'file.txt')
+```
+
+---
+
+## 🧱 6. Infrastructure as Code (IaC)
+
+### 🔹 CloudFormation
+
+* Define infrastructure using YAML/JSON templates
+* Automates complete setup
+
+Example:
+
+```yaml
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      InstanceType: t2.micro
+```
+
+---
+
+## 🧠 7. Key Concepts
+
+* **EC2** → Virtual server
+* **Key Pair (.pem)** → Secure login
+* **SSH** → Remote connection
+* **AWS CLI** → Command-line AWS management
+* **Boto3** → Python automation
+* **CloudFormation** → Infrastructure as Code
+
+---
+
+## 🔥 8. DevOps Evolution
+
+| Stage           | Approach               |
+| --------------- | ---------------------- |
+| Manual          | AWS Console            |
+| Semi-Automated  | AWS CLI                |
+| Fully Automated | Boto3 / CloudFormation |
+
+---
+
+## ⚡ 9. Common Errors & Fixes
+
+### ❌ Permission Denied
+
+```bash
+chmod 600 key.pem
+```
+
+---
+
+### ❌ Key Not Found
+
+```bash
+ssh -i /full/path/key.pem ubuntu@<ip>
+```
+
+---
+
+### ❌ Wrong Username
+
+* Ubuntu → `ubuntu`
+* Amazon Linux → `ec2-user`
+
+---
+
+## 🚀 10. Final Takeaway
+
+* Start with EC2 (manual setup)
+* Scale using AWS CLI
+* Automate using Boto3
+* Move towards Infrastructure as Code
+
+👉 This
