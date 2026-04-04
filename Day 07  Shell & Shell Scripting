@@ -1,0 +1,138 @@
+# 🚀 DevOps Journey – Day 07  
+
+## 📌 Topic: Shell & Shell Scripting (Complete Guide)
+
+---
+
+## 🎥 Reference  
+https://www.youtube.com/watch?v=zsajhz2_50g  
+
+---
+
+## 📖 Overview  
+
+In this session, I learned about **Shell, Shell Scripting, commands, shebang, and differences between sh and bash**.  
+Shell scripting is a fundamental DevOps skill used to automate tasks and manage systems efficiently.
+
+---
+
+## 🖥️ What is Shell?  
+
+A **Shell** is a command-line interpreter that acts as a bridge between the user and the operating system.
+
+👉 It allows users to:  
+- Run commands  
+- Execute programs  
+- Automate tasks  
+
+---
+
+## 🔹 Types of Shell  
+
+- **Bash (Bourne Again Shell)** → Most popular  
+- **Sh (Bourne Shell)** → Older shell  
+- **Zsh (Z Shell)**  
+- **Ksh (Korn Shell)**  
+
+---
+
+## 📜 What is Shell Scripting?  
+
+Shell scripting is writing a sequence of commands in a file to automate repetitive tasks.
+
+- File extension: `.sh`  
+- Example use: backups, deployments, automation  
+
+---
+
+## ⚙️ Basic Linux Commands  
+
+```bash
+pwd        # Print working directory
+ls         # List files
+cd         # Change directory
+mkdir      # Create directory
+rm         # Remove files
+touch      # Create empty file
+cat        # Display file content
+echo       # Print text
+
+
+
+  ⚡ Shebang (#!)
+
+Shebang defines which interpreter should run the script.
+
+Example:
+#!/bin/bash
+
+👉 Meaning: Run this script using Bash interpreter
+
+🧾 Complete Shell Script Example
+#!/bin/bash
+
+# Variable
+name="DevOps"
+
+# Print message
+echo "Hello $name"
+
+# User input
+echo "Enter a number:"
+read num
+
+# Condition
+if [ $num -gt 10 ]
+then
+  echo "Number is greater than 10"
+else
+  echo "Number is less or equal to 10"
+fi
+
+# Loop
+for i in 1 2 3 4 5
+do
+  echo "Iteration: $i"
+done
+
+  ▶️ How to Run Script
+chmod +x script.sh   # Give execute permission
+./script.sh          # Run script
+
+  🔁 Variables
+name="Linux"
+echo $name
+  
+🔀 Conditional Statements
+if [ condition ]
+then
+  # code
+else
+  # code
+fi
+🔁 Loops
+For Loop
+for i in 1 2 3
+do
+  echo $i
+done
+While Loop
+i=1
+while [ $i -le 3 ]
+do
+  echo $i
+  ((i++))
+done
+🔧 Important Commands for Scripts
+read var        # Take user input
+echo            # Print output
+chmod +x file   # Make executable
+./file          # Run script
+⚔️ Difference Between sh and bash
+Feature	sh (Bourne Shell)	bash (Bourne Again Shell)
+Type	Older shell	Advanced shell
+Features	Limited	Rich features
+Arrays	❌ Not supported	✅ Supported
+Syntax	Simple	More powerful
+Usage	Basic scripting	Advanced scripting
+Compatibility	Highly portable	Less portable than sh
