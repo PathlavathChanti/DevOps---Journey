@@ -1,51 +1,52 @@
-# 🚀 DevOps Journey – Day 07  
+# 🚀 DevOps Journey – Day 07
 
-## 📌 Topic: Shell & Shell Scripting (Complete Guide)
-
----
-
-## 🎥 Reference  
-https://www.youtube.com/watch?v=zsajhz2_50g  
+## 📌 Topic: Shell & Shell Scripting (Complete + Practical Guide)
 
 ---
 
-## 📖 Overview  
+# 📖 Overview
 
-In this session, I learned about **Shell, Shell Scripting, commands, shebang, and differences between sh and bash**.  
-Shell scripting is a fundamental DevOps skill used to automate tasks and manage systems efficiently.
+In this session, I learned about **Shell, Shell Scripting, Linux commands, Shebang, and the difference between `sh` and `bash`**.
 
----
-
-## 🖥️ What is Shell?  
-
-A **Shell** is a command-line interpreter that acts as a bridge between the user and the operating system.
-
-👉 It allows users to:  
-- Run commands  
-- Execute programs  
-- Automate tasks  
+Shell scripting is a core DevOps skill used for automation, server management, monitoring, and deployment.
 
 ---
 
-## 🔹 Types of Shell  
+# 🖥️ What is Shell?
 
-- **Bash (Bourne Again Shell)** → Most popular  
-- **Sh (Bourne Shell)** → Older shell  
-- **Zsh (Z Shell)**  
-- **Ksh (Korn Shell)**  
+A Shell is a command-line interface that acts as a bridge between the user and the operating system.
 
----
+It allows:
 
-## 📜 What is Shell Scripting?  
-
-Shell scripting is writing a sequence of commands in a file to automate repetitive tasks.
-
-- File extension: `.sh`  
-- Example use: backups, deployments, automation  
+* Executing commands
+* Running programs
+* Automating workflows
 
 ---
 
-## ⚙️ Basic Linux Commands  
+# 🔹 Types of Shell
+
+* Bash (/bin/bash) – Most widely used
+* Sh (/bin/sh) – Basic POSIX shell
+* Zsh – Advanced and customizable
+* Ksh – Korn shell
+
+---
+
+# 📜 What is Shell Scripting?
+
+Shell scripting is writing a sequence of commands in a `.sh` file to automate repetitive tasks.
+
+Use cases:
+
+* Deployment scripts
+* Monitoring scripts
+* Backup automation
+* Cron jobs
+
+---
+
+# ⚙️ Basic Linux Commands
 
 ```bash
 pwd        # Print working directory
@@ -53,35 +54,37 @@ ls         # List files
 cd         # Change directory
 mkdir      # Create directory
 rm         # Remove files
-touch      # Create empty file
-cat        # Display file content
-echo       # Print text
+touch      # Create file
+cat        # View file
+echo       # Print output
+```
 
+---
 
+# ⚡ Shebang (#!)
 
-  ⚡ Shebang (#!)
+Defines which interpreter runs the script:
 
-Shebang defines which interpreter should run the script.
+```bash
+#!/bin/bash
+```
 
-Example:
+Meaning: Execute the script using Bash.
+
+---
+
+# 🧾 Complete Shell Script Example
+
+```bash
 #!/bin/bash
 
-👉 Meaning: Run this script using Bash interpreter
-
-🧾 Complete Shell Script Example
-#!/bin/bash
-
-# Variable
 name="DevOps"
 
-# Print message
 echo "Hello $name"
 
-# User input
 echo "Enter a number:"
 read num
 
-# Condition
 if [ $num -gt 10 ]
 then
   echo "Number is greater than 10"
@@ -89,50 +92,141 @@ else
   echo "Number is less or equal to 10"
 fi
 
-# Loop
 for i in 1 2 3 4 5
 do
   echo "Iteration: $i"
 done
+```
 
-  ▶️ How to Run Script
-chmod +x script.sh   # Give execute permission
-./script.sh          # Run script
+---
 
-  🔁 Variables
+# ▶️ How to Run Script
+
+```bash
+chmod +x script.sh
+./script.sh
+```
+
+---
+
+# 🔁 Variables
+
+```bash
 name="Linux"
 echo $name
-  
-🔀 Conditional Statements
+```
+
+---
+
+# 🔀 Conditional Statements
+
+```bash
 if [ condition ]
 then
   # code
 else
   # code
 fi
-🔁 Loops
-For Loop
+```
+
+---
+
+# 🔁 Loops
+
+## For Loop
+
+```bash
 for i in 1 2 3
 do
   echo $i
 done
-While Loop
+```
+
+## While Loop
+
+```bash
 i=1
 while [ $i -le 3 ]
 do
   echo $i
   ((i++))
 done
-🔧 Important Commands for Scripts
-read var        # Take user input
-echo            # Print output
-chmod +x file   # Make executable
-./file          # Run script
-⚔️ Difference Between sh and bash
-Feature	sh (Bourne Shell)	bash (Bourne Again Shell)
-Type	Older shell	Advanced shell
-Features	Limited	Rich features
-Arrays	❌ Not supported	✅ Supported
-Syntax	Simple	More powerful
-Usage	Basic scripting	Advanced scripting
-Compatibility	Highly portable	Less portable than sh
+```
+
+---
+
+# 🔧 Important Commands for Scripts
+
+```bash
+read var        # user input
+echo            # output
+chmod +x file   # make executable
+./file          # run script
+```
+
+---
+
+# ⚔️ Difference Between sh and bash
+
+| Feature  | sh                  | bash              |
+| -------- | ------------------- | ----------------- |
+| Type     | Basic shell         | Advanced shell    |
+| Features | Limited             | Rich              |
+| Arrays   | Not supported       | Supported         |
+| Syntax   | Simple              | Powerful          |
+| Use      | Lightweight scripts | DevOps automation |
+
+---
+
+# 🚀 Role of Shell Scripting in DevOps
+
+## 1. Infrastructure Maintenance
+
+* Automate server setup
+* Monitor CPU, memory, disk usage
+* Restart services automatically
+
+## 2. Code Management using Git
+
+* Automate git clone, pull, push
+* Store scripts in GitHub for version control
+
+## 3. Configuration Management
+
+* Automate cron jobs
+* Navigate directories
+* Manage application setup
+
+## 4. Monitoring at Scale
+
+* Monitor 1000+ VMs
+* Detect high CPU and memory usage
+* Identify problematic machines
+* Send alerts or notifications
+
+## 5. Automation using Cron Jobs
+
+```bash
+crontab -e
+```
+
+* Schedule scripts to run automatically
+* Example: monitor system every 5 minutes
+
+---
+
+# 🧠 Real DevOps Workflow
+
+Script → GitHub → Cron → Monitoring → Alerts
+
+---
+
+# 🎯 Viva Answer
+
+Shell scripting is used in DevOps to automate infrastructure management, monitor system health across multiple servers, manage code repositories using Git, and schedule tasks using cron jobs.
+
+---
+
+# ⚡ One-Line Summary
+
+Shell scripting is the automation backbone of DevOps.
