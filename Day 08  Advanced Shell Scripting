@@ -1,0 +1,272 @@
+# 🚀 DevOps Journey – Day 08
+
+## 📌 Topic: Advanced Shell Scripting (Monitoring + Debugging + Commands)
+
+---
+
+## 🎥 Reference
+
+[https://www.youtube.com/watch?v=zsajhz2_50g](https://www.youtube.com/watch?v=zsajhz2_50g)
+
+---
+
+# 📖 Overview
+
+In this session, I learned advanced shell scripting concepts used in real DevOps environments such as monitoring systems, debugging scripts, filtering logs, handling errors, and automating tasks.
+
+---
+
+# 🧠 Key Concepts Learned
+
+## 📜 1. Introduction to Advanced Shell Scripting
+
+* Focus on **Bash scripting**
+* Works across Linux-based systems
+* Used for automation, monitoring, and debugging
+
+---
+
+## 🔁 2. Recap (Previous Knowledge)
+
+Commands used for system monitoring:
+
+```bash
+df       # disk usage
+free     # memory usage
+nproc    # CPU cores
+top      # live processes
+```
+
+---
+
+## 🚀 3. Goal of Script
+
+👉 Create a **VM health monitoring script**
+
+* Check CPU
+* Check memory
+* Identify issues
+
+---
+
+## 🗒️ 4. Script Metadata (Best Practice)
+
+Include details at top of script:
+
+```bash
+# Author: Your Name
+# Date:
+# Version: 1.0
+# Description: VM Health Monitoring Script
+```
+
+---
+
+## 🔍 5. Debugging using echo
+
+```bash
+echo "Checking memory..."
+```
+
+👉 Helps track script execution
+
+---
+
+## 🐍 6. grep Command
+
+```bash
+grep "error" file.txt
+```
+
+👉 Filters specific data from output
+
+---
+
+## 🔄 7. Pipe (|) Operator
+
+```bash
+command1 | command2
+```
+
+👉 Output of command1 → input of command2
+
+Example:
+
+```bash
+ps -ef | grep nginx
+```
+
+---
+
+## 🔀 8. Combining ps + grep
+
+```bash
+ps -ef | grep process_name
+```
+
+👉 Used to find running processes
+
+---
+
+## ⚠️ 9. Pipe Limitation
+
+* Pipe works with STDOUT → STDIN
+* Some commands like `date` behave differently
+
+---
+
+## 📊 10. awk Command
+
+```bash
+ps -ef | awk '{print $1}'
+```
+
+👉 Extracts specific columns
+
+---
+
+## 🛑 11. Error Handling (VERY IMPORTANT)
+
+### Exit on error
+
+```bash
+set -e
+```
+
+### Fail if pipe fails
+
+```bash
+set -o pipefail
+```
+
+---
+
+## 🌐 12. curl Command
+
+```bash
+curl https://example.com
+```
+
+👉 Used to fetch data from APIs/web
+
+### Example:
+
+```bash
+curl url | grep error
+```
+
+---
+
+## ⬇️ 13. wget Command
+
+```bash
+wget https://example.com/file
+```
+
+👉 Downloads file (no direct output)
+
+---
+
+## 🔍 14. find Command
+
+```bash
+find . -name file.txt
+```
+
+👉 Locate files in system
+
+---
+
+## 🔀 15. Conditions
+
+```bash
+if [ condition ]
+then
+  # code
+else
+  # code
+fi
+```
+
+---
+
+## 🔁 16. Loops
+
+```bash
+for i in 1 2 3
+do
+  echo $i
+done
+```
+
+---
+
+## 🛑 17. trap Command (VERY IMPORTANT 🔥)
+
+```bash
+trap "echo Interrupted!" SIGINT
+```
+
+👉 Handles signals like Ctrl+C
+
+### Use Case:
+
+* Prevent incomplete execution
+* Cleanup before exit
+
+---
+
+## 🌍 18. Real DevOps Use Case
+
+👉 Scenario:
+
+* 1000+ VMs
+
+Script will:
+
+* Check memory & CPU
+* Filter logs using grep
+* Extract data using awk
+* Fetch logs using curl
+* Detect issues
+* Send alerts
+
+---
+
+# 🧠 DevOps Workflow
+
+👉 Script → Monitoring → Logs → Filtering → Alerts
+
+---
+
+# 🎯 Viva Answer
+
+Advanced shell scripting in DevOps is used for monitoring systems, debugging scripts, filtering logs using grep and awk, handling errors with set commands, automating tasks using loops and conditions, and interacting with APIs using curl.
+
+---
+
+# ⚔️ Difference Between wget and curl
+
+| Feature         | wget                     | curl                        |
+| --------------- | ------------------------ | --------------------------- |
+| Purpose         | Download files           | Transfer data (API, web)    |
+| Output          | Saves file automatically | Shows output in terminal    |
+| Protocols       | HTTP, HTTPS, FTP         | HTTP, HTTPS, FTP, SCP, etc. |
+| Resume download | Yes                      | Limited                     |
+| API calls       | Not ideal                | Best suited                 |
+| Upload data     | No                       | Yes                         |
+| Ease of use     | Simple                   | Flexible                    |
+
+### Examples
+
+```bash
+wget https://example.com/file.zip
+curl https://example.com
+curl -o file.zip https://example.com/file.zip
+```
+
+---
+
+# ⚡ One-Line Summary
+
+Advanced shell scripting enables automation, monitoring, and error handling in real-world DevOps environments.
