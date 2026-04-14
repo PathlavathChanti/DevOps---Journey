@@ -1,0 +1,264 @@
+# 🚀 Day 9–10: Git & GitHub Mastery Cheat Sheet
+
+## 📌 Overview
+
+This document covers **Git & GitHub fundamentals, commands, and definitions** essential for **placements, interviews, and DevOps workflows**.
+
+---
+
+# 🧠 1. What is Git?
+
+**Definition:**
+Git is a **distributed version control system** used to track changes in source code and enable collaboration among developers.
+
+---
+
+# 🌐 2. What is GitHub?
+
+**Definition:**
+GitHub is a **cloud-based platform** that hosts Git repositories and enables collaboration, version control, and CI/CD workflows.
+
+---
+
+# 🔄 3. Git Workflow (Core Concept)
+
+```
+Working Directory → Staging Area → Local Repository → Remote Repository
+```
+
+### Definitions:
+
+* **Working Directory** → Where files are modified
+* **Staging Area** → Temporary storage before commit
+* **Local Repository** → Stores committed changes locally
+* **Remote Repository** → Repository hosted on GitHub
+
+---
+
+# ⚙️ 4. Setup Commands
+
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "your@email.com"
+git config --list
+```
+
+---
+
+# 📁 5. Repository
+
+```bash
+git init
+git clone <repo-url>
+```
+
+**Definition:**
+A repository is a **storage space containing project files and their version history**.
+
+---
+
+# 📌 6. File States
+
+* **Untracked** → New files not tracked by Git
+* **Staged** → Files ready to be committed
+* **Committed** → Files saved in repository
+
+---
+
+# 🔄 7. Daily Workflow Commands (🔥 Most Important)
+
+```bash
+git status
+git add .
+git commit -m "message"
+git push origin main
+git pull origin main
+```
+
+---
+
+# 💾 8. Commit
+
+```bash
+git commit -m "message"
+```
+
+**Definition:**
+A commit is a **snapshot of changes stored in the repository with a unique ID (hash)**.
+
+---
+
+# 🌿 9. Branching
+
+```bash
+git branch
+git checkout -b feature-branch
+```
+
+**Definition:**
+A branch is a **separate line of development used to work independently without affecting main code**.
+
+---
+
+# 🔀 10. Merge
+
+```bash
+git checkout main
+git merge feature-branch
+```
+
+**Definition:**
+Merging combines changes from one branch into another.
+
+---
+
+# ⚔️ 11. Merge Conflict
+
+**Definition:**
+Occurs when Git cannot automatically merge changes due to conflicts in the same file.
+
+```bash
+git add .
+git commit
+```
+
+---
+
+# 🌐 12. Remote Repository
+
+```bash
+git remote add origin <repo-url>
+git push -u origin main
+git pull origin main
+```
+
+---
+
+# ⏪ 13. Undo & Recovery (🔥 Important)
+
+### Discard changes
+
+```bash
+git checkout -- file.txt
+```
+
+### Unstage file
+
+```bash
+git reset file.txt
+```
+
+### Revert commit (safe)
+
+```bash
+git revert <commit-id>
+```
+
+### Hard reset (danger ⚠️)
+
+```bash
+git reset --hard <commit-id>
+```
+
+---
+
+# 🔁 14. Reflog (💥 Life Saver)
+
+```bash
+git reflog
+```
+
+**Definition:**
+Tracks all changes to HEAD and helps recover lost commits.
+
+---
+
+# 📊 15. Advanced Commands
+
+```bash
+git diff
+git stash
+git fetch
+git rebase
+```
+
+---
+
+# 🔄 16. Fork vs Clone
+
+| Term  | Definition                             |
+| ----- | -------------------------------------- |
+| Clone | Copy repository to local system        |
+| Fork  | Copy repository to your GitHub account |
+
+---
+
+# 🎯 17. Most Important Commands
+
+```bash
+git init
+git clone
+git status
+git add .
+git commit -m "msg"
+git push
+git pull
+git branch
+git checkout -b
+git merge
+git log --oneline
+git reset --hard
+git revert
+git reflog
+```
+
+---
+
+# 🧠 18. Key Interview Terms
+
+* **HEAD** → Pointer to current commit
+* **Staging Area** → Intermediate step before commit
+* **Commit Hash** → Unique ID for each commit
+* **Repository** → Project storage
+
+---
+
+# 🚀 19. Quick Revision
+
+### Git Flow:
+
+```
+init → add → commit → push → pull → branch → merge
+```
+
+### Undo Flow:
+
+```
+checkout → reset → revert → reflog
+```
+
+---
+
+# 💡 20. Best Practices
+
+✔ Always run `git status` before actions
+✔ Use meaningful commit messages
+✔ Work on feature branches (not main)
+✔ Prefer `git revert` in team projects
+✔ Use `reflog` for recovery
+
+---
+
+# 🏁 Conclusion
+
+By Day 9–10, you should be able to:
+
+* Understand Git workflow
+* Use essential commands confidently
+* Handle branching, merging, and conflicts
+* Recover lost work using reflog
+* Follow real-world GitHub collaboration practices
+
+---
+
+⭐ *Consistent practice with these commands will make you industry-ready for DevOps and software roles.*
