@@ -1,9 +1,5 @@
 # 🚀 DevOps Zero to Hero – Complete Learning Journey
 
-## 📌 Course Reference
-This repository documents my complete DevOps learning journey from the playlist:  
-👉 https://www.youtube.com/playlist?list=PLdpzxOOAlwvIc1TjTwopNSjRJkzES2ZXk  
-
 ---
 
 ## 🎯 Objective
